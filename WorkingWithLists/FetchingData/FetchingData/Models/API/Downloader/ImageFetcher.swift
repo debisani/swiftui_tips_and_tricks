@@ -10,7 +10,11 @@ import Foundation
 import Combine
 import SwiftUI
 
-class ImageFetcher: BindableObject {
+//issue in swift 5
+//class ImageFetcher: BindableObject {
+
+// code in swift <5
+class ImageFetcher: ObservableObject {
     var didChange = PassthroughSubject<Data, Never>()
     
     var data: Data = Data() {
