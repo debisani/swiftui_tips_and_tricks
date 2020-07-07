@@ -9,7 +9,11 @@
 import SwiftUI
 
 struct LoadableImageView: View {
-    @ObjectBinding var imageFetcher: ImageFetcher
+    //this issue in swift <5
+    //@ObjectBinding var imageFetcher: ImageFetcher
+    
+    //swift 5.3
+    @ObservedObject var imageFetcher: ImageFetcher
     
     var stateContent: AnyView {
         if let image = UIImage(data: imageFetcher.data) {
